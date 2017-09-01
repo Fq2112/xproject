@@ -11,13 +11,14 @@
                 </div>
             </div>
         </div>
-        <div class="overlay overlay-ipc"></div>
+        <div class="overlay overlay-lw"></div>
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-md-10">
                     <div class="contents text-center">
-                        <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Informatics Photography Competition</h1>
-                        <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"><em>"Human InTerest"</em></p>
+                        <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Logic War</h1>
+                        <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"><em>"Explore Your
+                                Knowledge with Logic Art"</em></p>
                         <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms"
                            data-wow-delay="400ms">DAFTAR SEKARANG!</a>
                     </div>
@@ -29,8 +30,8 @@
     <style>
         .btn-common3 {
             color: #ffffff;
-            border: 2px solid #240D4F;
-            background-color: #240D4F;
+            border: 2px solid #FA7F01;
+            background-color: #FA7F01;
             position: relative;
             z-index: 1;
             border-radius: 4px;
@@ -38,55 +39,53 @@
         }
 
         .btn-common3:hover {
-            color: #240D4F;
+            color: #FA7F01;
             font-weight: bold;
             background-color: transparent;
-            border: 2px solid #240D4F;
+            border: 2px solid #FA7F01;
             transition: all 0.5s ease-in-out;
             -moz-transition: all 0.5s ease-in-out;
             -webkit-transition: all 0.5s ease-in-out;
         }
-        #about .box-item {
-            padding-bottom: 0px;
-        }
     </style>
 
-    <!-- timeline WDC Section Start -->
+    <!-- timeline logic war Section Start -->
     <div id="testimonial" class="section">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-md-10 wow fadeInRight" data-wow-delay="0.2s">
                     <div class="touch-slider owl-carousel owl-theme">
                         <div class="testimonial-item">
-                            <img src="/img/IFC/regist.png" alt="WDC" />
+                            <img src="/img/IFC/regist.png" alt="Logic War"/>
                             <div class="testimonial-text">
-                                <h3>Registrasi dan Pengiriman Karya WDC & IPC</h3>
-                                <span>6 September – 25 Oktober 2017</span>
-                                <p>Pendaftaran WDC dan IPC dapat dilakukan secara online maupun offline, sedangkan untuk pengiriman karya WDC dan IPC hanya bisa dilakukan secara online.</p>
+                                <h3>Registrasi Logic War</h3>
+                                <span>01 September - 19 Oktober 2017</span>
+                                <p>Pendaftaran Logic War secara online maupun offline.</p>
                             </div>
                         </div>
                         <div class="testimonial-item">
-                            <img src="/img/CI/juri.png" alt="WDC" />
+                            <img src="/img/IC/code.png" alt="Logic War"/>
                             <div class="testimonial-text">
-                                <h3>Penilaian WDC & IPC (Juri + Jumlah Like Instagram)</h3>
-                                <span>30 Oktober - 09 November 2017</span>
-                                <p>Penilaian dilakukan oleh juri untuk menentukan juara umum, dan penilaian dengan like instagram untuk menentukan juara favorit.</p>
+                                <h3>Babak Penyisihan Online Logic War</h3>
+                                <span>22 Oktober 2017</span>
+                                <p>Babak penyisihan Logic War dilakukan secara online langsung di website ini.</p>
                             </div>
                         </div>
                         <div class="testimonial-item">
-                            <img src="/img/IC/pengumuman.png" alt="WDC" />
+                            <img src="/img/IC/pengumuman.png" alt="Logic War"/>
                             <div class="testimonial-text">
-                                <h3>Pengumuman Juara WDC & IPC</h3>
-                                <span>10 November 2017</span>
-                                <p>Pengumuman juara diinformasikan melalui website ini. Namun, pengambilan hadiah waktu CI (Ceremony of Informatics).</p>
+                                <h3>Pengumuman Semifinal Logic War</h3>
+                                <span>31 Oktober 2017</span>
+                                <p>Pengumuman Semifinal Logic War diinformasikan melalui website ini.</p>
                             </div>
                         </div>
                         <div class="testimonial-item">
-                            <img src="/img/CI/jazz.jpg" alt="WDC" />
+                            <img src="/img/IC/exam.png" alt="Logic War"/>
                             <div class="testimonial-text">
-                                <h3>CI (Ceremony of Informatics)</h3>
-                                <span>25 November 2017</span>
-                                <p>Seluruh puncak acara dan pembagian hadiah untuk setiap kategori lomba dilaksanakan pada momen ini.</p>
+                                <h3>Semifinal & Final Logic War</h3>
+                                <span>05 November 2017</span>
+                                <p>Babak semifinal dan final Logic War dilakukan di Gedung E1 lt.3 Fakultas Teknik UNESA
+                                    Ketintang.</p>
                             </div>
                         </div>
                     </div>
@@ -94,26 +93,35 @@
             </div>
         </div>
     </div>
-    <!-- timeline WDC Section Start -->
+    <!-- timeline logic war Section Start -->
 
     <!-- About Section Start -->
-    <section id="about" class="section" data-stellar-background-ratio="0.2" style="background: #ffffff;padding-top: 40px">
+    <section id="about" class="section" data-stellar-background-ratio="0.2"
+             style="background: #ffffff; padding-top: 40px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="show-box wow fadeInDown animated" data-wow-offset="10">
-                        <img src="/img/maskotCI.png">
+                        <img src="/img/maskot%20ic%20&%20logic.png">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="content-right text-left wow fadeInRight animated" data-wow-offset="10">
                         <div class="box-item right">
                             <div class="text">
-                                <p style="font-size: 24px; line-height: 200%"><b>IPC</b> merupakan lomba yang diadakan untuk menggali kemampuan logika di kalangan siswa SMA/SMK sederajat. Jenis lomba ini berbentuk kompetisi logika matematika. Lomba ini memberikan peluang untuk dapat bersaing sampai sejauh mana mereka mengetahui tentang bidang komputer khususnya dalam Logika Matematika.
+                                <p style="font-size: 24px; line-height: 200%"><b>Logic War</b> merupakan lomba yang
+                                    diadakan untuk menggali kemampuan logika di kalangan siswa SMA/SMK sederajat. Jenis
+                                    lomba ini berbentuk kompetisi logika matematika. Lomba ini memberikan peluang untuk
+                                    dapat bersaing sampai sejauh mana mereka mengetahui tentang bidang komputer
+                                    khususnya dalam Logika Matematika.
                                 </p>
                             </div>
                         </div>
-                        <br>
+                        <style>
+                            #about .box-item {
+                                padding-bottom: 0px;
+                            }
+                        </style>
                         <div class="box-item right">
                             <div class="text">
                                 <p>
@@ -126,8 +134,9 @@
                         <div class="box-item right">
                             <div class="text">
                                 <p>
-                                    <a href="http://bit.ly/2x9JlST" target="_blank" class="btn btn-common3" id="submit">
-                                        download rulebook
+                                    <a id="submit" class="btn btn-common3"
+                                       href="{{url('ic/xproject/logicwar-rulebook#blog')}}">
+                                        DOWNLOAD RULEBOOK
                                     </a>
                                 </p>
                             </div>
@@ -149,13 +158,14 @@
                                 <span>Contact Person</span></h2>
                             <hr class="lines wow zoomIn" data-wow-delay="0.3s">
                             <p style="color: black; font-weight: bold">Tap me!<br>
-                                <a href="http://line.me/ti/p/~mbohwes908"><img src="/img/LINE_icon01.png" width="40"
-                                                                               height="40"></a>
-                                <a href="whatsapp://send?text=Hello, Zahid!&phone=+6281343220357&abid=+6281343220357"><img
+                                <a href="http://line.me/ti/p/~nlkin"><img src="/img/LINE_icon01.png" width="40"
+                                                                          height="40"></a>
+                                <a href="whatsapp://send?text=Hello, Kinanti!&phone=+6289677206608&abid=+6289677206608"><img
                                             src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
-                            <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="color: black;font-weight: bold;font-size: 24px">
-                                <b>Zahid</b>: mbohwes908 | 081343220357<br>
-                                <b>Medina</b>: medinaamirinnisa | 085931381693
+                            <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"
+                               style="color: black;font-weight: bold;font-size: 24px">
+                                <b>Kinanti</b>: nlkin | 089677206608<br>
+                                <b>Kikin</b>: chairus_sakinah | 085231326541
                             </p>
                         </div>
                     </div>
@@ -163,4 +173,5 @@
             </div>
         </div>
     </section>
+
 @endsection

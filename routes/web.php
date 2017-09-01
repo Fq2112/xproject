@@ -11,22 +11,38 @@
 |
 */
 
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('xproject', 'XprojectController@index');
 
-Route::get('ic/xproject', 'XprojectController@showIC');
-Route::get('ic/xproject/logicwar', 'XprojectController@showLogicWar');
-Route::get('ic/xproject/itfest', 'XprojectController@showITFest');
+Route::prefix('ic/xproject')->group(function () {
+    Route::get('/', 'XprojectController@showIC');
 
-Route::get('ci/xproject', 'XprojectController@showCI');
-Route::get('ci/xproject/wdc', 'XprojectController@showWDC');
-Route::get('ci/xproject/ipc', 'XprojectController@showIPC');
+    Route::get('/logicwar', 'IcController@showLogicWar');
+    Route::get('/logicwar-rulebook', 'IcController@LogicWarRulebook');
+    Route::get('/logicwar-quiz', 'IcController@showLogicWarQuiz');
 
-Route::get('ifc/xproject', 'XprojectController@showIFC');
+    Route::get('/itfest', 'IcController@showITFest');
+    Route::get('/itfest-rulebook', 'IcController@ITFestRulebook');
+});
 
-Auth::routes();
+Route::prefix('ci/xproject')->group(function () {
+    Route::get('/', 'XprojectController@showCI');
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/wdc', 'CiController@showWDC');
+    Route::get('/wdc-rulebook', 'CiController@WDCRulebook');
 
-Auth::routes();
+    Route::get('/ipc', 'CiController@showIPC');
+    Route::get('/ipc-rulebook', 'CiController@IPCRulebook');
+});
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::prefix('ifc/xproject')->group(function () {
+    Route::get('/', 'XprojectController@showIFC');
+    Route::get('/rulebook', 'IfcController@IFCRulebook');
+});
+
+Route::get('test', function () {
+    return view('xproject.test');
+});

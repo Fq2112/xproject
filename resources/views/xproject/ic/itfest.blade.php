@@ -146,7 +146,8 @@
                         <div class="box-item right">
                             <div class="text">
                                 <p>
-                                    <a target="_blank" href="http://bit.ly/2wlxjVT" class="btn btn-common3" id="submit">
+                                    <a href="{{url('ic/xproject/itfest-rulebook#blog')}}" class="btn btn-common3"
+                                       id="submit">
                                         download rulebook
                                     </a>
                                 </p>
