@@ -76,7 +76,7 @@
                         </div>
                         <div class="testimonial-item">
                             <img src="/img/IC/code.png" alt="ITFest" />
-                            <div class="testimonial-text">
+                            <div class="testdaimonial-text">
                                 <h3>Babak Penyisihan Online ITFest</h3>
                                 <span>01 November - 11 November 2017</span>
                                 <p>Babak penyisihan ITFest dilakukan secara online langsung di website ini.</p>
@@ -137,9 +137,8 @@
                         <div class="box-item right">
                             <div class="text">
                                 <p>
-                                    <a href="#">
-                                        <button class="btn btn-common3" id="submit" type="submit">daftar sekarang
-                                        </button>
+                                    <a href="#" class="btn btn-common3" id="submit">
+                                        daftar sekarang
                                     </a>
                                 </p>
                             </div>
@@ -147,9 +146,8 @@
                         <div class="box-item right">
                             <div class="text">
                                 <p>
-                                    <a href="#">
-                                        <button class="btn btn-common3" id="submit" type="submit">download rulebook
-                                        </button>
+                                    <a target="_blank" href="http://bit.ly/2wlxjVT" class="btn btn-common3" id="submit">
+                                        download rulebook
                                     </a>
                                 </p>
                             </div>

@@ -112,9 +112,8 @@
                         <div class="box-item right">
                             <div class="text">
                                 <p>
-                                    <a href="#">
-                                        <button class="btn btn-common3" id="submit" type="submit">daftar sekarang
-                                        </button>
+                                    <a href="#" class="btn btn-common3" id="submit">
+                                        daftar sekarang
                                     </a>
                                 </p>
                             </div>
@@ -122,9 +121,8 @@
                         <div class="box-item right">
                             <div class="text">
                                 <p>
-                                    <a href="#">
-                                        <button class="btn btn-common3" id="submit" type="submit">download rulebook
-                                        </button>
+                                    <a href="http://bit.ly/2em2tCr" target="_blank" class="btn btn-common3" id="submit">
+                                        download rulebook
                                     </a>
                                 </p>
                             </div>
