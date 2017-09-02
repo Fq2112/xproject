@@ -21,6 +21,11 @@ class IcController extends Controller
         return view('xproject.ic.logicwar_quiz');
     }
 
+    public function showLogicWarTryOut()
+    {
+        return view('xproject.ic.logicwar_tryout');
+    }
+
     public function showITFest()
     {
         return view('xproject.ic.itfest');

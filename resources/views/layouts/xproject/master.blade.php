@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/responsive.css">
     <script src="/js/jquery-3.2.1.js"></script>
+    @yield('socmed')
 </head>
 <body>
 <div class="menu-wrap">
@@ -75,7 +76,7 @@
                 </script>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Register/Login</a>
+                    <a class="nav-link" href="{{url('login#form')}}">Register/Login</a>
                 </li>
             </ul>
         </div>

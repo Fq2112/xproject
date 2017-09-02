@@ -1,8 +1,7 @@
 @extends('layouts.xproject.master')
 @section('socmed')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="/bootstrap-social-gh-pages/bootstrap-social.css" rel="stylesheet">
-    <link href="/bootstrap-social-gh-pages/assets/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/w3.css" rel="stylesheet">
 @endsection
 @section('content')
     <!-- Header Section Start -->
@@ -291,10 +290,10 @@
         <div class="container">
             <div class="section-header" style="margin-bottom: 0px">
                 <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-                    <span>Form Pendaftaran</span></h2>
+                    <span>Informasi Pembayaran</span></h2>
                 <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Isi dengan
-                    lengkap dan benar.</p>
+                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Selesaikan tahap
+                    pembayaran untuk mendapatkan hak akses penuh sebagai peserta lomba.</p>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -306,12 +305,12 @@
                                 <div class="progress-circle"></div>
                             </div>
                             <div class="step step02">
-                                <progress class="progress" value="0" max="100"
+                                <progress class="progress" value="100" max="100"
                                           aria-describedby="Step 02"></progress>
                                 <div class="progress-circle"></div>
                             </div>
                             <div class="step step03">
-                                <progress class="progress" value="0" max="100"
+                                <progress class="progress" value="100" max="100"
                                           aria-describedby="Step 03"></progress>
                                 <div class="progress-circle"></div>
                             </div>
@@ -331,11 +330,11 @@
                             <div class="label" style="color: black">Review</div>
                             <div class="label" style="color: black">Pembayaran</div>
                             <div class="label" style="color: black">Proses</div>
-                            <div class="label" style="color: black">E-Ticket</div>
+                            <div class="label" style="color: black">Hak Akses</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-lg-offset-2">
+                <div class="col-lg-12">
                     <style>
                         #daftar select {
                             height: 35px;
@@ -362,154 +361,43 @@
                         }
                     </style>
                     <br>
-                    <form id="daftar" class="form-horizontal" role="form" method="get" action="/ez/tour/review">
-                        <div class="form-group">
-                            <label class="control-label col-md-3" for="lomba">Bidang Lomba</label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="lomba" id="lomba" required>
-                                    <option value="ifc">IFC</option>
-                                    <option value="logicwar">Logic War</option>
-                                    <option value="itfest">ITFest</option>
-                                    <option value="wdc">WDC</option>
-                                    <option value="ipc">IPC</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group" id="aitfest">
-                            <label class="control-label col-md-3" for="kategoriitf">Bidang Kategori yang Diikuti</label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="kategoriitf" id="kategoriitf" required>
-                                    <option value="animasi">Animasi</option>
-                                    <option value="bisnis">Pengembangan Bisnis</option>
-                                    <option value="game">Pengembangan Game</option>
-                                    <option value="web">Desain Web</option>
-                                    <option value="pes">PES 2017</option>
-                                </select>
-                            </div>
-                        </div>
-                        <script>
-                            $(document).ready(function () {
-                                $("#aitfest").hide(10);
-                                $("#lomba").change(function () {
-                                    if ($("#lomba").val() == "itfest") {
-                                        $("#aitfest").show(300);
-                                    }
-                                    else {
-                                        $("#aitfest").hide(300);
-                                    }
-                                });
-                            });
-                        </script>
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} has-feedback">
-                            <label class="control-label col-md-3" for="email">E-mail</label>
-                            <div class="col-md-6">
-                                <input placeholder="contoh: fiqy_a@yahoo.com" id="email" type="email"
-                                       class="form-control" name="email"
-                                       value="{{ old('email') }}" required autofocus>
-                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} has-feedback">
-                            <label class="control-label col-md-3" for="password">Password</label>
-                            <div class="col-md-6">
-                                <input placeholder="minimal 6 karakter!" id="password" type="password"
-                                       class="form-control" name="password" required>
-                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="nama">Nama Lengkap</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" placeholder="nama lengkap..."
-                                       required autofocus>
-                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="instansi">Asal Instansi/Sekolah</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="instansi"
-                                       placeholder="asal instansi/sekolah..."
-                                       required autofocus>
-                                <span class="glyphicon glyphicon-home form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="tempat_lahir">Tempat Lahir</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="contoh: surabaya"
-                                       name="tempat_lahir" required>
-                                <span class="glyphicon glyphicon-bed form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="tgl_lahir">Tanggal Lahir</label>
-                            <div class="col-md-6">
-                                <input type="date" class="form-control" name="tgl_lahir" required>
-                                <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="nama">Asal Daerah</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="asal" placeholder="daerah asal..."
-                                       required autofocus>
-                                <span class="glyphicon glyphicon-home form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="alamat">Alamat Tinggal</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="alamat" placeholder="alamat sekarang..."
-                                       required autofocus>
-                                <span class="glyphicon glyphicon-home form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="alamat">Nomor Handphone</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="phone"
-                                       placeholder="Masukkan Nomor Handphone"
-                                       onkeypress="return hanyaAngka(event, false)" maxlength="13" required autofocus>
-                                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                    <div class="w3-container -align-center center-block">
+                        <div class="col-md-12">
+                            <h2><i class="fa fa-bank"></i> Selesaikan Pembayaran</h2>
+                            <div class="w3-panel w3-card">
+                                <br>
+                                <h4 style="color: #0C4487" id="demo"></h4> <h4>Transfer ke Rekening berikut:</h4>
+                                <br>
+                                <img src="/img/btn.png" style="width: 25%">
+                                <p>No. rek: <strong>00061-01-61-002020-2</strong><br>a/n. <strong>Nur Lujeng
+                                        Kinanti</strong></p>
+                                <br>
+                                <p>Setelah anda melakukan pembayaran, mohon upload bukti pembayaran ke kontak
+                                    berikut:</p>
+                                <p style="color: black; font-weight: bold">Tap me!<br>
+                                    <a href="http://line.me/ti/p/~agngga"><img src="/img/LINE_icon01.png" width="40"
+                                                                               height="40"></a>
+                                    <a href="whatsapp://send?text=Ini kak bukti pembayarannya.&phone=+6289677124206&abid=+6289677124206"><img
+                                                src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
+                                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"
+                                   style="color: black;font-weight: bold;font-size: 24px">
+                                    <b>Angga</b>: agngga | 089677124206<br>
+                                </p>
+                                <hr>
+                                <p>Setelah itu, silahkan klik tombol dibawah ini.</p>
+                                <button title="Dengan mengklik tombol ini maka anda akan mendapatkan nomor booking."
+                                        data-toggle="tooltip" data-placement="bottom" type="submit"
+                                        class="btn btn-common2"><strong>KONFIRMASI PEMBAYARAN <i
+                                                class="fa fa-chevron-right"></i></strong></button>
                                 <script>
-                                    function hanyaAngka(e, decimal) {
-                                        var key;
-                                        var keychar;
-                                        if (window.event) {
-                                            key = window.event.keyCode;
-                                        } else if (e) {
-                                            key = e.which;
-                                        } else return true;
-                                        keychar = String.fromCharCode(key);
-                                        if ((key == null) || (key == 0) || (key == 8) || (key == 9) || (key == 13) || (key == 27)) {
-                                            return true;
-                                        } else if ((("0123456789").indexOf(keychar) > -1)) {
-                                            return true;
-                                        } else if (decimal && (keychar == ".")) {
-                                            return true;
-                                        } else return false;
-                                    }
+                                    $(document).ready(function () {
+                                        $('[data-toggle="tooltip"]').tooltip();
+                                    });
                                 </script>
-
+                                <h5>&nbsp;</h5>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-3 col-md-6">
-                                <button type="submit" class="btn btn-common2">SUBMIT</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

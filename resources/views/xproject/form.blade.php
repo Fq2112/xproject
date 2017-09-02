@@ -331,7 +331,7 @@
                             <div class="label" style="color: black">Review</div>
                             <div class="label" style="color: black">Pembayaran</div>
                             <div class="label" style="color: black">Proses</div>
-                            <div class="label" style="color: black">E-Ticket</div>
+                            <div class="label" style="color: black">Hak Akses</div>
                         </div>
                     </div>
                 </div>

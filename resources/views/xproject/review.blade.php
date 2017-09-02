@@ -1,8 +1,7 @@
 @extends('layouts.xproject.master')
 @section('socmed')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="/bootstrap-social-gh-pages/bootstrap-social.css" rel="stylesheet">
-    <link href="/bootstrap-social-gh-pages/assets/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/w3.css" rel="stylesheet">
 @endsection
 @section('content')
     <!-- Header Section Start -->
@@ -291,10 +290,10 @@
         <div class="container">
             <div class="section-header" style="margin-bottom: 0px">
                 <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-                    <span>Form Pendaftaran</span></h2>
+                    <span>Review Data</span></h2>
                 <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Isi dengan
-                    lengkap dan benar.</p>
+                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Cek data yang
+                    telah anda isikan sebelumnya.</p>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -306,7 +305,7 @@
                                 <div class="progress-circle"></div>
                             </div>
                             <div class="step step02">
-                                <progress class="progress" value="0" max="100"
+                                <progress class="progress" value="100" max="100"
                                           aria-describedby="Step 02"></progress>
                                 <div class="progress-circle"></div>
                             </div>
@@ -331,11 +330,11 @@
                             <div class="label" style="color: black">Review</div>
                             <div class="label" style="color: black">Pembayaran</div>
                             <div class="label" style="color: black">Proses</div>
-                            <div class="label" style="color: black">E-Ticket</div>
+                            <div class="label" style="color: black">Hak Akses</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-lg-offset-2">
+                <div class="col-lg-12">
                     <style>
                         #daftar select {
                             height: 35px;
@@ -362,154 +361,81 @@
                         }
                     </style>
                     <br>
-                    <form id="daftar" class="form-horizontal" role="form" method="get" action="/ez/tour/review">
-                        <div class="form-group">
-                            <label class="control-label col-md-3" for="lomba">Bidang Lomba</label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="lomba" id="lomba" required>
-                                    <option value="ifc">IFC</option>
-                                    <option value="logicwar">Logic War</option>
-                                    <option value="itfest">ITFest</option>
-                                    <option value="wdc">WDC</option>
-                                    <option value="ipc">IPC</option>
-                                </select>
+                    <div class="w3-container col-md-12">
+                        <div class="col-md-12">
+                            <h2><i class="fa fa-user"></i> Identitas Diri</h2>
+                            <div class="w3-panel w3-card"><br>
+                                <table>
+                                    <tr>
+                                        <td>Nama Lengkap</td>
+                                        <td>&nbsp;:&nbsp;&nbsp;</td>
+                                        <td><strong>Fiqy Ainuzzaqy</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><br>Asal Instansi/Sekolah</td>
+                                        <td><br>&nbsp;:&nbsp;&nbsp;</td>
+                                        <td><br><strong>Universitas Negeri Surabaya</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><br>Alamat Email</td>
+                                        <td><br>&nbsp;:&nbsp;&nbsp;</td>
+                                        <td><br><strong>fiqy_a@yahoo.com</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><br>No. Telp/HP</td>
+                                        <td><br>&nbsp;:&nbsp;&nbsp;</td>
+                                        <td><br><strong>08563094333</strong></td>
+                                    </tr>
+                                </table>
+                                <br>
                             </div>
                         </div>
-                        <div class="form-group" id="aitfest">
-                            <label class="control-label col-md-3" for="kategoriitf">Bidang Kategori yang Diikuti</label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="kategoriitf" id="kategoriitf" required>
-                                    <option value="animasi">Animasi</option>
-                                    <option value="bisnis">Pengembangan Bisnis</option>
-                                    <option value="game">Pengembangan Game</option>
-                                    <option value="web">Desain Web</option>
-                                    <option value="pes">PES 2017</option>
-                                </select>
+                        <div class="col-md-8">
+                            <br>
+                            <h2><i class="fa fa-tags"></i> Detail Lomba yang Diikuti</h2>
+                            <div class="w3-panel w3-card">
+                                <div class="col-md-14">
+                                    <div class="col-md-10">
+                                        <br>
+                                        <table>
+                                            <tr>
+                                                <td><br>Bidang Lomba</td>
+                                                <td><br>&nbsp;:&nbsp;&nbsp;</td>
+                                                <td><br><strong>ITFest</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td><br>Bidang Kategori yang Diikuti</td>
+                                                <td><br>&nbsp;:&nbsp;&nbsp;</td>
+                                                <td><br><strong>Animasi</strong></td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <script>
-                            $(document).ready(function () {
-                                $("#aitfest").hide(10);
-                                $("#lomba").change(function () {
-                                    if ($("#lomba").val() == "itfest") {
-                                        $("#aitfest").show(300);
-                                    }
-                                    else {
-                                        $("#aitfest").hide(300);
-                                    }
-                                });
-                            });
-                        </script>
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} has-feedback">
-                            <label class="control-label col-md-3" for="email">E-mail</label>
-                            <div class="col-md-6">
-                                <input placeholder="contoh: fiqy_a@yahoo.com" id="email" type="email"
-                                       class="form-control" name="email"
-                                       value="{{ old('email') }}" required autofocus>
-                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="col-md-4"><br>
+                            <h2><i class="fa fa-hand-o-right"></i> Tahap Selanjutnya</h2>
+                            <div class="w3-panel w3-card-4"><br>
+                                <div class="col-md-12 text-center">
+                                    <h3>Lanjut ke Pembayaran</h3>
+                                    <button title="Dengan mengklik tombol ini maka anda telah menyetujui syarat dan ketentuan yang berlaku."
+                                            data-toggle="tooltip" data-placement="bottom" type="submit"
+                                            class="btn btn-common2"><strong>PEMBAYARAN <i
+                                                    class="fa fa-chevron-right"></i>
+                                        </strong>
+                                    </button>
+                                    <h6>&nbsp;</h6>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $('[data-toggle="tooltip"]').tooltip();
+                                        });
+                                    </script>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} has-feedback">
-                            <label class="control-label col-md-3" for="password">Password</label>
-                            <div class="col-md-6">
-                                <input placeholder="minimal 6 karakter!" id="password" type="password"
-                                       class="form-control" name="password" required>
-                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="nama">Nama Lengkap</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" placeholder="nama lengkap..."
-                                       required autofocus>
-                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="instansi">Asal Instansi/Sekolah</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="instansi"
-                                       placeholder="asal instansi/sekolah..."
-                                       required autofocus>
-                                <span class="glyphicon glyphicon-home form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="tempat_lahir">Tempat Lahir</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="contoh: surabaya"
-                                       name="tempat_lahir" required>
-                                <span class="glyphicon glyphicon-bed form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="tgl_lahir">Tanggal Lahir</label>
-                            <div class="col-md-6">
-                                <input type="date" class="form-control" name="tgl_lahir" required>
-                                <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="nama">Asal Daerah</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="asal" placeholder="daerah asal..."
-                                       required autofocus>
-                                <span class="glyphicon glyphicon-home form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="alamat">Alamat Tinggal</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="alamat" placeholder="alamat sekarang..."
-                                       required autofocus>
-                                <span class="glyphicon glyphicon-home form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label class="control-label col-md-3" for="alamat">Nomor Handphone</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="phone"
-                                       placeholder="Masukkan Nomor Handphone"
-                                       onkeypress="return hanyaAngka(event, false)" maxlength="13" required autofocus>
-                                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
-                                <script>
-                                    function hanyaAngka(e, decimal) {
-                                        var key;
-                                        var keychar;
-                                        if (window.event) {
-                                            key = window.event.keyCode;
-                                        } else if (e) {
-                                            key = e.which;
-                                        } else return true;
-                                        keychar = String.fromCharCode(key);
-                                        if ((key == null) || (key == 0) || (key == 8) || (key == 9) || (key == 13) || (key == 27)) {
-                                            return true;
-                                        } else if ((("0123456789").indexOf(keychar) > -1)) {
-                                            return true;
-                                        } else if (decimal && (keychar == ".")) {
-                                            return true;
-                                        } else return false;
-                                    }
-                                </script>
-
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-3 col-md-6">
-                                <button type="submit" class="btn btn-common2">SUBMIT</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

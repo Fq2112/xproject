@@ -22,4 +22,29 @@ class XprojectController extends Controller
     {
         return view('xproject.ifc.ifc');
     }
+
+    public function showFormInput()
+    {
+        return view('xproject.form');
+    }
+
+    public function showFormReview()
+    {
+        return view('xproject.review');
+    }
+
+    public function showFormPembayaran()
+    {
+        return view('xproject.pembayaran');
+    }
+
+    public function showFormProses()
+    {
+        return view('xproject.proses');
+    }
+
+    public function showFormReport()
+    {
+        return view('xproject.hakakses');
+    }
 }
