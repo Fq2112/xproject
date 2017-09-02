@@ -22,4 +22,5 @@ class XprojectController extends Controller
     {
         return view('xproject.ifc.ifc');
     }
+
 }

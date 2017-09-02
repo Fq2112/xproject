@@ -43,6 +43,10 @@ Route::prefix('ifc/xproject')->group(function () {
     Route::get('/rulebook', 'IfcController@IFCRulebook');
 });
 
+Route::get('/xproject/daftar',function (){
+    return view('xproject.pendaftaran');
+})->name('daftar');
+
 Route::get('test', function () {
     return view('xproject.test');
 });

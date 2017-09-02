@@ -1,68 +1,100 @@
-@extends('layouts.app')
+@extends('layouts.xproject.master')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+    <link rel="stylesheet" href="css/custom.css">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+    <!-- Header Section Start -->
+    <header id="video-area" data-stellar-background-ratio="0.5">
+        <div id="block" data-vide-bg="video/video"></div>
+        <div class="fixed-top">
+            <div class="container">
+                <div class="logo-menu">
+                    <a href="/xproject" class="logo"><img src="/img/xproject2.PNG" width="15%"></a>
+                    <button class="menu-button" id="open-button"><i class="lnr lnr-menu"></i></button>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <div class="overlay overlay-2"></div>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="contents text-center">
+                        <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">X-Project 3.0</h1>
+                        <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"><em>"Infinite
+                                Spirit and Creativity"</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-9 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
+                    <div class="formPage">
+                        <nav class="formCtlWrapper">
+                            <a href="#" class="btn login active" data-tab="tab-1">login</a>
+                            <i></i>
+                            <a href="#" class="btn register" data-tab="tab-2">register</a>
+                        </nav>
+
+                        <form name="loginform" class="login formBlock active" id="tab-1">
+                            <h4>Login:</h4>
+                            <div class="input-group">
+                                <p class="formLabel">Email</p>
+                                <input type="text" name="email" id="email" autocomplete="off">
+                            </div>
+                            <div class="input-group">
+                                <p class="formLabel">Password</p>
+                                <input type="password" name="password" id="password">
+                            </div>
+                            <div class="checkbox-group">
+                                <label class="form-remember">
+                                    <input type="checkbox"> <span>Remember Me</span>
+                                </label>
+                                <a href="#" class="form-recovery">Forgot Password?</a>
+                            </div>
+                            <p id="errors" class="error"></p>
+                            <div class="form-group">
+                                <button type="submit" onclick="return validateLogin();">Log In</button>
+                            </div>
+                        </form>
+                        <form name="registerform" class="register formBlock" id="tab-2">
+                            <h4>Register:</h4>
+                            <div class="input-group">
+                                <p class="formLabel">Username</p>
+                                <input type="text" id="username" name="username" autocomplete="off">
+                            </div>
+                            <div class="input-group">
+                                <p class="formLabel">Password</p>
+                                <input type="password" id="password" name="password">
+                            </div>
+                            <div class="input-group">
+                                <p class="formLabel">Confirm Password</p>
+                                <input type="password" id="cpassword" name="cpassword">
+                            </div>
+                            <div class="input-group">
+                                <p class="formLabel">Email Address</p>
+                                <input type="text" id="email" name="email" autocomplete="off">
+                            </div>
+                            <p id="registererrors" class="error"></p>
+                            <div class="form-group">
+                                <button type="submit" id="registerSubmit" onclick="return validateRegister();">
+                                    Register
+                                </button>
+                            </div>
+                        </form>
+                    </div> <!-- /.formPage -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/custom.js"></script>
+
 @endsection

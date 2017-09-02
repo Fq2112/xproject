@@ -75,7 +75,7 @@
                 </script>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Register/Login</a>
+                    <a class="nav-link" href="{{route('login')}}">Register/Login</a>
                 </li>
             </ul>
         </div>
