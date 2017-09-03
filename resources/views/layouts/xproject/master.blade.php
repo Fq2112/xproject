@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('css/menu_sideslide.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    @yield('socmed')
 </head>
 <body>
 <div class="menu-wrap">
@@ -74,7 +75,7 @@
                 </script>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('login')}}">Register/Login</a>
+                    <a class="nav-link" href="{{url('login#form')}}">Register/Login</a>
                 </li>
             </ul>
         </div>

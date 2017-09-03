@@ -141,6 +141,16 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="box-item right">
+                            <div class="text">
+                                <p>
+                                    <a id="submit" target="_blank" class="btn btn-common3"
+                                       href="{{url('ic/xproject/logicwar-simulasi')}}">
+                                        Simulasi Logic War
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
