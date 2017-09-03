@@ -1,8 +1,8 @@
 @extends('layouts.xproject.master')
 @section('socmed')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="/bootstrap-social-gh-pages/bootstrap-social.css" rel="stylesheet">
-    <link href="/bootstrap-social-gh-pages/assets/css/font-awesome.css" rel="stylesheet">
+    <link href="{{ asset('bootstrap-social-gh-pages/bootstrap-social.css') }}" rel="stylesheet">
+    <link href="{{ asset('bootstrap-social-gh-pages/assets/css/font-awesome.css') }}" rel="stylesheet">
 @endsection
 @section('content')
     <!-- Header Section Start -->
@@ -74,11 +74,6 @@
                                             <strong>{{ $errors->first('password') }}</strong>
                                         </span>
                                         @endif
-                                        <span class="help-block">
-                                        <a href="{{ route('password.request') }}">
-                                            Lupa kata sandi Anda?
-                                        </a>
-                                    </span>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -123,7 +118,7 @@
                                             LOGIN
                                         </button>
 
-                                        <a class="btn btn-link" href="{{ url('form#form') }}">
+                                        <a class="btn btn-link" href="{{ route('register') }}">
                                             Belum punya akun? Daftar Sekarang!
                                         </a>
                                     </div>

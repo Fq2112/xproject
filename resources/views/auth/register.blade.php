@@ -1,8 +1,8 @@
 @extends('layouts.xproject.master')
 @section('socmed')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="/bootstrap-social-gh-pages/bootstrap-social.css" rel="stylesheet">
-    <link href="/bootstrap-social-gh-pages/assets/css/font-awesome.css" rel="stylesheet">
+    <link href="{{ asset('bootstrap-social-gh-pages/bootstrap-social.css') }}" rel="stylesheet">
+    <link href="{{ asset('bootstrap-social-gh-pages/assets/css/font-awesome.css') }}" rel="stylesheet">
 @endsection
 @section('content')
     <!-- Header Section Start -->
@@ -362,7 +362,10 @@
                         }
                     </style>
                     <br>
-                    <form id="daftar" class="form-horizontal" role="form" method="get" action="/ez/tour/review">
+                    <form id="daftar" class="form-horizontal" role="form" method="post" action="{{ route('register.submit') }}">
+
+                        {{ csrf_field() }}
+
                         <div class="form-group">
                             <label class="control-label col-md-3" for="lomba">Bidang Lomba</label>
                             <div class="col-md-6">
@@ -427,61 +430,96 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group has-feedback">
+                        <div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }} has-feedback">
                             <label class="control-label col-md-3" for="nama">Nama Lengkap</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" placeholder="nama lengkap..."
+                                <input type="text" value="{{ old('nama') }}" class="form-control" name="nama" placeholder="nama lengkap..."
                                        required autofocus>
                                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                @if ($errors->has('nama'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nama') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                        <div class="form-group has-feedback">
+                        <div class="form-group{{ $errors->has('instansi') ? ' has-error' : '' }} has-feedback">
                             <label class="control-label col-md-3" for="instansi">Asal Instansi/Sekolah</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="instansi"
+                                <input type="text" class="form-control" name="instansi" value="{{ old('instansi') }}"
                                        placeholder="asal instansi/sekolah..."
                                        required autofocus>
                                 <span class="glyphicon glyphicon-home form-control-feedback"></span>
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                        <div class="form-group has-feedback">
+                        <div class="form-group{{ $errors->has('tempat_lahir') ? ' has-error' : '' }} has-feedback">
                             <label class="control-label col-md-3" for="tempat_lahir">Tempat Lahir</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="contoh: surabaya"
-                                       name="tempat_lahir" required>
+                                       name="tempat_lahir" value="tempat_lahir" required>
                                 <span class="glyphicon glyphicon-bed form-control-feedback"></span>
+                                @if ($errors->has('tempat_lahir'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tempat_lahir') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                        <div class="form-group has-feedback">
+                        <div class="form-group{{ $errors->has('tgl_lahir') ? ' has-error' : '' }} has-feedback">
                             <label class="control-label col-md-3" for="tgl_lahir">Tanggal Lahir</label>
                             <div class="col-md-6">
-                                <input type="date" class="form-control" name="tgl_lahir" required>
+                                <input type="date" class="form-control" value="{{ old('tgl_lahir') }}" name="tgl_lahir" required>
                                 <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                                @if ($errors->has('tgl_lahir'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tgl_lahir') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                        <div class="form-group has-feedback">
+                        <div class="form-group{{ $errors->has('asal') ? ' has-error' : '' }} has-feedback">
                             <label class="control-label col-md-3" for="nama">Asal Daerah</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="asal" placeholder="daerah asal..."
+                                <input type="text" class="form-control" value="{{ old('asal') }}" name="asal" placeholder="daerah asal..."
                                        required autofocus>
                                 <span class="glyphicon glyphicon-home form-control-feedback"></span>
+                                @if ($errors->has('asal'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('asal') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                        <div class="form-group has-feedback">
+                        <div class="form-group{{ $errors->has('alamat') ? ' has-error' : '' }} has-feedback">
                             <label class="control-label col-md-3" for="alamat">Alamat Tinggal</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="alamat" placeholder="alamat sekarang..."
+                                <input type="text" value="{{ old('alamat') }}" class="form-control" name="alamat" placeholder="alamat sekarang..."
                                        required autofocus>
                                 <span class="glyphicon glyphicon-home form-control-feedback"></span>
+                                @if ($errors->has('alamat'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('alamat') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                        <div class="form-group has-feedback">
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }} has-feedback">
                             <label class="control-label col-md-3" for="alamat">Nomor Handphone</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="phone"
+                                <input type="text" class="form-control" value="phone" name="phone"
                                        placeholder="Masukkan Nomor Handphone"
                                        onkeypress="return hanyaAngka(event, false)" maxlength="13" required autofocus>
                                 <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                                @if ($errors->has('phone'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
                                 <script>
                                     function hanyaAngka(e, decimal) {
                                         var key;

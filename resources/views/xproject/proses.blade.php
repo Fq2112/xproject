@@ -419,8 +419,14 @@
                     </div>
                     <script>
                         t1 = window.setTimeout(function () {
-                            window.location = "/xproject/form-review";
-                        }, 5000);
+                            @if(Auth::user()->lomba()->first()->kode == 'logicwar')
+                                window.location = "{{ route('form.report') }}";
+                            @elseif(Auth::user()->lomba()->first()->pivot->terkonfirmasi)
+                                window.location = "{{ route('home') }}";
+                            @else
+                                window.location = "{{ route('pembayaran') }}";
+                            @endif
+                        }, 3000);
                     </script>
                 </div>
             </div>

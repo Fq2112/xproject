@@ -375,20 +375,35 @@
                                 <p>Setelah anda melakukan pembayaran, mohon upload bukti pembayaran ke kontak
                                     berikut:</p>
                                 <p style="color: black; font-weight: bold">Tap me!<br>
-                                    <a href="http://line.me/ti/p/~agngga"><img src="/img/LINE_icon01.png" width="40"
-                                                                               height="40"></a>
-                                    <a href="whatsapp://send?text=Ini kak bukti pembayarannya.&phone=+6289677124206&abid=+6289677124206"><img
-                                                src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
+                                    @if(Auth::user()->lomba()->first()->pivot->kode == 'ifc')
+                                        <a href="http://line.me/ti/p/~agngga"><img src="/img/LINE_icon01.png" width="40"
+                                                                                   height="40"></a>
+                                        <a href="whatsapp://send?text=Ini kak bukti pembayarannya.&phone=+6289677124206&abid=+6289677124206"><img
+                                                    src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
                                 <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"
                                    style="color: black;font-weight: bold;font-size: 24px">
                                     <b>Angga</b>: agngga | 089677124206<br>
                                 </p>
+                                @elseif(Auth::user()->lomba()->first()->pivot->kode == 'logicwar')
+
+                                    Ini cp logic war
+
+                                    @elseif(Auth::user()->lomba()->first()->pivot->kode == 'wdc' || Auth::user()->lomba()->first()->pivot->kode == 'ipc')
+
+                                    cp wdc atau ipc
+
+                                    @else
+
+                                    cp untuk ITFest
+
+                                @endif
                                 <hr>
                                 <p>Setelah itu, silahkan klik tombol dibawah ini.</p>
-                                <button title="Dengan mengklik tombol ini maka anda akan mendapatkan nomor booking."
-                                        data-toggle="tooltip" data-placement="bottom" type="submit"
-                                        class="btn btn-common2"><strong>KONFIRMASI PEMBAYARAN <i
-                                                class="fa fa-chevron-right"></i></strong></button>
+                                <a href="{{ route('form.proses') }}"
+                                   title="Dengan mengklik tombol ini maka anda akan mendapatkan nomor booking."
+                                   data-toggle="tooltip" data-placement="bottom" type="submit"
+                                   class="btn btn-common2"><strong>KONFIRMASI PEMBAYARAN <i
+                                                class="fa fa-chevron-right"></i></strong></a>
                                 <script>
                                     $(document).ready(function () {
                                         $('[data-toggle="tooltip"]').tooltip();

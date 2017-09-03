@@ -369,22 +369,22 @@
                                     <tr>
                                         <td>Nama Lengkap</td>
                                         <td>&nbsp;:&nbsp;&nbsp;</td>
-                                        <td><strong>Fiqy Ainuzzaqy</strong></td>
+                                        <td><strong>{{ Session::get('nama') }}</strong></td>
                                     </tr>
                                     <tr>
                                         <td><br>Asal Instansi/Sekolah</td>
                                         <td><br>&nbsp;:&nbsp;&nbsp;</td>
-                                        <td><br><strong>Universitas Negeri Surabaya</strong></td>
+                                        <td><br><strong>{{ Session::get('instansi') }}</strong></td>
                                     </tr>
                                     <tr>
                                         <td><br>Alamat Email</td>
                                         <td><br>&nbsp;:&nbsp;&nbsp;</td>
-                                        <td><br><strong>fiqy_a@yahoo.com</strong></td>
+                                        <td><br><strong>{{ Session::get('email') }}</strong></td>
                                     </tr>
                                     <tr>
                                         <td><br>No. Telp/HP</td>
                                         <td><br>&nbsp;:&nbsp;&nbsp;</td>
-                                        <td><br><strong>08563094333</strong></td>
+                                        <td><br><strong>{{ Session::get('no_telp') }}</strong></td>
                                     </tr>
                                 </table>
                                 <br>
@@ -401,12 +401,14 @@
                                             <tr>
                                                 <td><br>Bidang Lomba</td>
                                                 <td><br>&nbsp;:&nbsp;&nbsp;</td>
-                                                <td><br><strong>ITFest</strong></td>
+                                                <td><br><strong>{{ Session::get('lomba') }}</strong></td>
                                             </tr>
                                             <tr>
                                                 <td><br>Bidang Kategori yang Diikuti</td>
                                                 <td><br>&nbsp;:&nbsp;&nbsp;</td>
-                                                <td><br><strong>Animasi</strong></td>
+                                                <td>
+                                                    <br><strong>{{ Session::get('lomba') == 'itfest' ? Session::get('kategori') : '-' }}</strong>
+                                                </td>
                                             </tr>
                                         </table>
                                         <br>
@@ -420,12 +422,31 @@
                             <div class="w3-panel w3-card-4"><br>
                                 <div class="col-md-12 text-center">
                                     <h3>Lanjut ke Pembayaran</h3>
-                                    <button title="Dengan mengklik tombol ini maka anda telah menyetujui syarat dan ketentuan yang berlaku."
-                                            data-toggle="tooltip" data-placement="bottom" type="submit"
-                                            class="btn btn-common2"><strong>PEMBAYARAN <i
-                                                    class="fa fa-chevron-right"></i>
-                                        </strong>
-                                    </button>
+                                    <form action="{{ route('register.final') }}" method="post">
+
+                                        {{ csrf_field() }}
+
+                                        <input type="hidden" name="nama" value="{{ Session::get('nama') }}"/>
+                                        @if(Session::get('lomba') == 'itfest')
+                                        <input type="hidden" name="kategoriitf" value="{{ Session::get('kategoriitf') }}"/>
+                                        @endif
+                                        <input type="hidden" name="lomba" value="{{ Session::get('lomba') }}"/>
+                                        <input type="hidden" name="email" value="{{ Session::get('email') }}"/>
+                                        <input type="hidden" name="password" value="{{ bcrypt(Session::get('password')) }}"/>
+                                        <input type="hidden" name="instansi" value="{{ Session::get('instansi') }}"/>
+                                        <input type="hidden" name="tempat_lahir" value="{{ Session::get('tempat_lahir') }}"/>
+                                        <input type="hidden" name="tgl_lahir" value="{{ Session::get('tgl_lahir') }}"/>
+                                        <input type="hidden" name="asal" value="{{ Session::get('asal') }}"/>
+                                        <input type="hidden" name="alamat" value="{{ Session::get('alamat') }}"/>
+                                        <input type="hidden" name="phone" value="{{ Session::get('phone') }}"/>
+
+                                        <button title="Dengan mengklik tombol ini maka anda telah menyetujui syarat dan ketentuan yang berlaku."
+                                                data-toggle="tooltip" data-placement="bottom" type="submit"
+                                                class="btn btn-common2"><strong>PEMBAYARAN <i
+                                                        class="fa fa-chevron-right"></i>
+                                            </strong>
+                                        </button>
+                                    </form>
                                     <h6>&nbsp;</h6>
                                     <script>
                                         $(document).ready(function () {

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasswordResetsTable extends Migration
+class TabelForeign extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        // Schema::create('password_resets', function (Blueprint $table) {
-        //     $table->string('email')->index();
-        //     $table->string('token');
-        //     $table->timestamp('created_at')->nullable();
-        // });
+        Schema::table('lomba_peserta', function (Blueprint $table){
+            $table->foreign('id_peserta')->on('peserta')->references('id');
+            $table->foreign('jenis_lomba')->on('jenis_lomba')->references('id');
+        });
     }
 
     /**
@@ -27,6 +26,6 @@ class CreatePasswordResetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        //
     }
 }

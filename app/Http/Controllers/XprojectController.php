@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class XprojectController extends Controller
 {
@@ -10,14 +11,17 @@ class XprojectController extends Controller
     {
        return view('xproject.beranda');
     }
+
     public function showIC()
     {
         return view('xproject.ic.ic');
     }
+
     public function showCI()
     {
         return view('xproject.ci.ci');
     }
+
     public function showIFC()
     {
         return view('xproject.ifc.ifc');
@@ -25,11 +29,14 @@ class XprojectController extends Controller
 
     public function showFormInput()
     {
-        return view('xproject.form');
+        return view('auth.register');
     }
 
     public function showFormReview()
     {
+        if(!Session::has('nama'))
+            return redirect()->route('pendaftaran');
+
         return view('xproject.review');
     }
 

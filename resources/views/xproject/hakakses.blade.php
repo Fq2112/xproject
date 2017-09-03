@@ -370,12 +370,12 @@
                                         <tr>
                                             <td><br>Username</td>
                                             <td><br>&nbsp;:&nbsp;&nbsp;</td>
-                                            <td><br><strong>fiqy_a@yahoo.com</strong></td>
+                                            <td><br><strong>{{ Auth::user()->lomba()->first()->pivot->username }}</strong></td>
                                         </tr>
                                         <tr>
                                             <td><br>Password</td>
                                             <td><br>&nbsp;:&nbsp;&nbsp;</td>
-                                            <td><br><strong>asjdwkj121#@skadn</strong></td>
+                                            <td><br><strong>{{ Auth::user()->lomba()->first()->pivot->token }}</strong></td>
                                         </tr>
                                     </table>
                                     <br>

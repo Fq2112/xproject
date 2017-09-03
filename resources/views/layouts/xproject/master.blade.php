@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('css/menu_sideslide.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <script src="{{ asset('js/jquery-min.js') }}"></script>
     @yield('socmed')
 </head>
 <body>
@@ -75,7 +76,19 @@
                 </script>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('login#form')}}">Register/Login</a>
+                    @if(Auth::check())
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    @else
+                        <a class="nav-link" href="{{url('login#form')}}">Register/Login</a>
+                    @endif
                 </li>
             </ul>
         </div>
@@ -92,10 +105,14 @@
             <div class="col-md-12">
                 <div class="social-icons wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
                     <ul>
-                        <li class="facebook"><a href="https://www.facebook.com/Informatikaunesa/"><i class="fa fa-facebook"></i></a></li>
-                        <li class="twitter"><a href="https://twitter.com/himti_unesa"><i class="fa fa-twitter"></i></a></li>
-                        <li class="instagram"><a href="https://www.instagram.com/xprojecttif/"><i class="fa fa-instagram"></i></a></li>
-                        <li class="naverline"><a href="http://line.me/ti/p/~UCW6451E"><img src="/img/line_outline.png" width="70%"></a></li>
+                        <li class="facebook"><a href="https://www.facebook.com/Informatikaunesa/"><i
+                                        class="fa fa-facebook"></i></a></li>
+                        <li class="twitter"><a href="https://twitter.com/himti_unesa"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="instagram"><a href="https://www.instagram.com/xprojecttif/"><i
+                                        class="fa fa-instagram"></i></a></li>
+                        <li class="naverline"><a href="http://line.me/ti/p/~UCW6451E"><img src="/img/line_outline.png"
+                                                                                           width="70%"></a></li>
                     </ul>
                 </div>
                 <div class="site-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s">
@@ -105,8 +122,8 @@
                         }
                     </style>
                     <p>All copyrights reserved &copy; 2017 - Designed by <a id="rm" rel="nofollow"
-                                                                                        href="http://rabbit-media.net/">Rabbit
-                            Media</a>
+                                                                            href="http://rabbit-media.net/">Rabbit
+                            Media</a>, System by Smadia
                     </p>
                 </div>
             </div>
@@ -121,7 +138,6 @@
 </a>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="{{ asset('js/jquery-min.js') }}"></script>
 <script src="{{ asset('js/tether.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/classie.js') }}"></script>
