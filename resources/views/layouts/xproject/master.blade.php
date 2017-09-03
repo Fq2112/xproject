@@ -10,18 +10,17 @@
     <title>X - Project 3.0</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/line-icons.css">
-    <link rel="stylesheet" href="/css/owl.carousel.css">
-    <link rel="stylesheet" href="/css/owl.theme.css">
-    <link rel="stylesheet" href="/css/nivo-lightbox.css">
-    <link rel="stylesheet" href="/css/magnific-popup.css">
-    <link rel="stylesheet" href="/css/animate.css">
-    <link rel="stylesheet" href="/css/menu_sideslide.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-    <script src="/js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/line-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nivo-lightbox.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/menu_sideslide.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 </head>
 <body>
 <div class="menu-wrap">
@@ -121,26 +120,26 @@
 </a>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="/js/jquery-min.js"></script>
-<script src="/js/tether.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/classie.js"></script>
-<script src="/js/mixitup.min.js"></script>
-<script src="/js/nivo-lightbox.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
-<script src="/js/jquery.stellar.min.js"></script>
-<script src="/js/jquery.nav.js"></script>
-<script src="/js/smooth-scroll.js"></script>
-<script src="/js/smooth-on-scroll.js"></script>
-<script src="/js/wow.js"></script>
-<script src="/js/menu.js"></script>
-<script src="/js/jquery.vide.js"></script>
-<script src="/js/jquery.counterup.min.js"></script>
-<script src="/js/jquery.magnific-popup.min.js"></script>
-<script src="/js/waypoints.min.js"></script>
-<script src="/js/form-validator.min.js"></script>
-<script src="/js/contact-form-script.js"></script>
-<script src="/js/main.js"></script>
+<script src="{{ asset('js/jquery-min.js') }}"></script>
+<script src="{{ asset('js/tether.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/classie.js') }}"></script>
+<script src="{{ asset('js/mixitup.min.js') }}"></script>
+<script src="{{ asset('js/nivo-lightbox.js') }}"></script>
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+<script src="{{ asset('js/jquery.nav.js') }}"></script>
+<script src="{{ asset('js/smooth-scroll.js') }}"></script>
+<script src="{{ asset('js/smooth-on-scroll.js') }}"></script>
+<script src="{{ asset('js/wow.js') }}"></script>
+<script src="{{ asset('js/menu.js') }}"></script>
+<script src="{{ asset('js/jquery.vide.js') }}"></script>
+<script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('js/waypoints.min.js') }}"></script>
+<script src="{{ asset('js/form-validator.min.js') }}"></script>
+<script src="{{ asset('js/contact-form-script.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 </html>
