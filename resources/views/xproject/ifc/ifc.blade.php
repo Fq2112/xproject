@@ -20,8 +20,11 @@
                             Championship</h1>
                         <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"><em>"Play with
                                 Your Heart and Feel Glory"</em></p>
-                        <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms"
-                           data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @if(Auth::guest())
+                            <a href="{{url('register#form')}}" class="btn btn-common wow fadeInUp"
+                               data-wow-duration="1000ms"
+                               data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -48,6 +51,7 @@
             -moz-transition: all 0.5s ease-in-out;
             -webkit-transition: all 0.5s ease-in-out;
         }
+
         #about .box-item {
             padding-bottom: 0px;
         }
@@ -60,7 +64,7 @@
                 <div class="col-md-10 wow fadeInRight" data-wow-delay="0.2s">
                     <div class="touch-slider owl-carousel owl-theme">
                         <div class="testimonial-item">
-                            <img src="/img/IFC/regist.png" alt="IFC" />
+                            <img src="/img/IFC/regist.png" alt="IFC"/>
                             <div class="testimonial-text">
                                 <h3>Registrasi IFC</h3>
                                 <span>15 September - 15 Oktober 2017</span>
@@ -68,19 +72,21 @@
                             </div>
                         </div>
                         <div class="testimonial-item">
-                            <img src="/img/IFC/tm.png" alt="IFC" />
+                            <img src="/img/IFC/tm.png" alt="IFC"/>
                             <div class="testimonial-text">
                                 <h3>Technical Meeting IFC</h3>
                                 <span>26 Oktober 2017</span>
-                                <p>Technical Meeting IFC dilakukan di Gedung B1 Jurusan Teknik Informatika UNESA Ketintang.</p>
+                                <p>Technical Meeting IFC dilakukan di Gedung B1 Jurusan Teknik Informatika UNESA
+                                    Ketintang.</p>
                             </div>
                         </div>
                         <div class="testimonial-item">
-                            <img src="/img/IFC/final.png" alt="IFC" />
+                            <img src="/img/IFC/final.png" alt="IFC"/>
                             <div class="testimonial-text">
                                 <h3>Babak Penyisihan dan Final IFC</h3>
                                 <span>28 Oktober - 29 Oktober 2017</span>
-                                <p>Babak penyisihan dan final IFC dilakukan di Lapangan GOR Internasional UNESA Lidah.</p>
+                                <p>Babak penyisihan dan final IFC dilakukan di Lapangan GOR Internasional UNESA
+                                    Lidah.</p>
                             </div>
                         </div>
                     </div>
@@ -91,7 +97,8 @@
     <!-- timeline ifc Section Start -->
 
     <!-- About Section Start -->
-    <section id="about" class="section" data-stellar-background-ratio="0.2" style="background: #ffffff;padding-top: 40px">
+    <section id="about" class="section" data-stellar-background-ratio="0.2"
+             style="background: #ffffff;padding-top: 40px">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -109,15 +116,17 @@
                             </div>
                         </div>
                         <br>
-                        <div class="box-item right">
-                            <div class="text">
-                                <p>
-                                    <a href="#" class="btn btn-common3" id="submit">
-                                        daftar sekarang
-                                    </a>
-                                </p>
+                        @if(Auth::guest())
+                            <div class="box-item right">
+                                <div class="text">
+                                    <p>
+                                        <a href="{{url('register#form')}}" class="btn btn-common3" id="submit">
+                                            daftar sekarang
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="box-item right">
                             <div class="text">
                                 <p>
@@ -145,10 +154,11 @@
                             <hr class="lines wow zoomIn" data-wow-delay="0.3s">
                             <p style="color: black; font-weight: bold">Tap me!<br>
                                 <a href="http://line.me/ti/p/~fitrotindwi"><img src="/img/LINE_icon01.png" width="40"
-                                                                          height="40"></a>
+                                                                                height="40"></a>
                                 <a href="whatsapp://send?text=Hello, Fitro!&phone=+6289675014272&abid=+6289675014272"><img
                                             src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
-                            <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s" style="color: black;font-weight: bold;font-size: 24px">
+                            <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"
+                               style="color: black;font-weight: bold;font-size: 24px">
                                 <b>Fitrotin</b>: fitrotindwi | 089675014272<br>
                                 <b>Adib</b>: Hafiizh04 | 087757232330
                             </p>

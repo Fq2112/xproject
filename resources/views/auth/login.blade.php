@@ -118,7 +118,7 @@
                                             LOGIN
                                         </button>
 
-                                        <a class="btn btn-link" href="{{ route('register') }}">
+                                        <a class="btn btn-link" href="{{ url('register#form') }}">
                                             Belum punya akun? Daftar Sekarang!
                                         </a>
                                     </div>

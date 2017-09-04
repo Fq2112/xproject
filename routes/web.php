@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/home', [
+Route::get('/dashboard', [
     'uses' => 'HomeController@index',
     'as' => 'home'
 ]);
@@ -114,39 +114,25 @@ Route::prefix('ifc/xproject')->group(function () {
     Route::get('/rulebook', 'IfcController@IFCRulebook');
 });
 
-Route::get('/xproject/daftar', function () {
-    return view('xproject.pendaftaran');
-})->name('daftar');
-
-Route::get('test', function () {
-    return view('xproject.test');
-});
-
 Route::group(['middleware' => ['auth', 'terkonfirmasi'], 'prefix' => 'unggah/url'], function () {
-
     Route::get('animasi', [
         'uses' => 'UnggahUrlController@animasi',
         'as' => 'unggah.url.animasi'
     ]);
-
     Route::put('animasi', [
         'uses' => 'ITFestController@animasi',
         'as' => 'unggah.url.animasi'
     ]);
-
     Route::get('desainweb', [
         'uses' => 'UnggahUrlController@desainweb',
         'as' => 'unggah.url.desainweb'
     ]);
-
     Route::get('game', [
         'uses' => 'UnggahUrlController@game',
         'as' => 'unggah.url.game'
     ]);
-
     Route::get('bisnis', [
         'uses' => 'UnggahUrlController@bisnis',
         'as' => 'unggah.url.bisnis'
     ]);
-
 });

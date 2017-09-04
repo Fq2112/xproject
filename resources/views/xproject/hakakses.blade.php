@@ -293,7 +293,7 @@
                     <span>Hak Akses</span></h2>
                 <hr class="lines wow zoomIn" data-wow-delay="0.3s">
                 <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Gunakan username
-                    dan password berikut untuk menggunakan hak akses anda sebagai peserta lomba.</p>
+                    dan password berikut untuk mengakses soal Logic War (url akan diberikan langsung oleh panitia).</p>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">

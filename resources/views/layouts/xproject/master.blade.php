@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="Grayrids">
+    <meta name="author" content="Rabbit Media">
     <title>X - Project 3.0</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/line-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/menu_sideslide.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-    <script src="{{ asset('js/jquery-min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
     @yield('socmed')
 </head>
 <body>
@@ -63,33 +64,39 @@
                         <a href="{{url('ci/xproject/wdc')}}">WDC</a>
                         <a href="{{url('ci/xproject/ipc')}}">IPC</a>
                     </div>
+                    @if(Auth::check())
+                        <a class="nav-link menu_head2" href="#"><i class="fa fa-user">&nbsp;</i>{{ Auth::user()->email}}
+                        </a>
+                        <div class="menu_body">
+                            @if(Auth::user()->lomba()->first()->kode == 'logicwar')
+                                <a href="{{url('/dashboard#form')}}"><i class="fa fa-dashboard"></i>&nbsp;Dashboard</a>
+                            @else
+                                <a href="{{url('/dashboard#form')}}"><i class="fa fa-upload"></i>&nbsp;Upload
+                                    Project</a>
+                            @endif
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa fa-sign-out"></i>&nbsp;Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </div>
+                    @else
+                        <a class="nav-link" href="{{url('login#form')}}">Login/Register</a>
+                    @endif
                 </li>
                 <script>
                     $("a.menu_head").click(function () {
                         $(this).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
-
                     });
                     $("a.menu_head1").click(function () {
                         $(this).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
-
+                    });
+                    $("a.menu_head2").click(function () {
+                        $(this).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
                     });
                 </script>
-
-                <li class="nav-item">
-                    @if(Auth::check())
-                        <a href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    @else
-                        <a class="nav-link" href="{{url('login#form')}}">Register/Login</a>
-                    @endif
-                </li>
             </ul>
         </div>
     </nav>
@@ -123,7 +130,8 @@
                     </style>
                     <p>All copyrights reserved &copy; 2017 - Designed by <a id="rm" rel="nofollow"
                                                                             href="http://rabbit-media.net/">Rabbit
-                            Media</a>, System by Smadia
+                            Media</a>, System by <a rel="nofollow"
+                                                    href="https://www.instagram.com/bagasmuharom/">Smadia</a>
                     </p>
                 </div>
             </div>
@@ -138,6 +146,7 @@
 </a>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="{{ asset('js/jquery-min.js') }}"></script>
 <script src="{{ asset('js/tether.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/classie.js') }}"></script>

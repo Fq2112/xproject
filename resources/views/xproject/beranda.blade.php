@@ -19,8 +19,11 @@
                         <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">X-Project 3.0</h1>
                         <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"><em>"Infinite
                                 Spirit and Creativity"</em></p>
-                        <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms"
-                           data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @if(Auth::guest())
+                            <a href="{{url('register#form')}}" class="btn btn-common wow fadeInUp"
+                               data-wow-duration="1000ms"
+                               data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -53,7 +56,8 @@
                 <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
                     <span>Events</span></h2>
                 <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Serangkaian kegiatan X-Project 3.0 2017</p>
+                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Serangkaian
+                    kegiatan X-Project 3.0 2017</p>
             </div>
             <div id="acara" class="row">
                 <div id="ifc" class="col-md-4 col-sm-12 col-xs-12">
@@ -73,7 +77,8 @@
                                                                   height="200"></a>
                         </div>
                         <a href="{{url('ic/xproject')}}"><h4>Informatics Champions</h4></a><br>
-                        <p align="justify">IC (Informatics Champions) merupakan perlombaan yang memadukan berbagai sisi dasar kemajuan teknologi baik dalam bentuk project maupun tes logika.</p>
+                        <p align="justify">IC (Informatics Champions) merupakan perlombaan yang memadukan berbagai sisi
+                            dasar kemajuan teknologi baik dalam bentuk project maupun tes logika.</p>
                     </div>
                 </div>
                 <div id="ci" class="col-md-4 col-sm-12 col-xs-12">
@@ -150,7 +155,8 @@
                 <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
                     <span>Timeline</span></h2>
                 <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Timeline kegiatan
+                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Timeline
+                    kegiatan
                     X-Project 3.0 2017</p>
             </div>
             <div class="row pricing-tables">
@@ -270,6 +276,7 @@
                                 visibility: visible;
                                 opacity: 1;
                             }
+
                             /* GENERAL MEDIA QUERIES
                             –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -310,39 +317,48 @@
                                     #bg_ic.in-view::after {
                                         background: #FA7F01;
                                     }
-                                    #bg_ic div{
+
+                                    #bg_ic div {
                                         background: #FA7F01;
                                     }
-                                    #bg_ic:nth-child(even) div::before{
+
+                                    #bg_ic:nth-child(even) div::before {
                                         border-color: transparent transparent transparent #FA7F01;
                                     }
-                                    #bg_ic:nth-child(odd) div::before{
+
+                                    #bg_ic:nth-child(odd) div::before {
                                         border-color: transparent #FA7F01 transparent transparent;
                                     }
 
                                     #bg_ci.in-view::after {
                                         background: #240D4F;
                                     }
-                                    #bg_ci div{
+
+                                    #bg_ci div {
                                         background: #240D4F;
                                     }
-                                    #bg_ci:nth-child(even) div::before{
+
+                                    #bg_ci:nth-child(even) div::before {
                                         border-color: transparent transparent transparent #240D4F;
                                     }
-                                    #bg_ci:nth-child(odd) div::before{
+
+                                    #bg_ci:nth-child(odd) div::before {
                                         border-color: transparent #240D4F transparent transparent;
                                     }
 
                                     #bg_ifc.in-view::after {
                                         background: #018580;
                                     }
-                                    #bg_ifc div{
+
+                                    #bg_ifc div {
                                         background: #018580;
                                     }
-                                    #bg_ifc:nth-child(even) div::before{
+
+                                    #bg_ifc:nth-child(even) div::before {
                                         border-color: transparent transparent transparent #018580;
                                     }
-                                    #bg_ifc:nth-child(odd) div::before{
+
+                                    #bg_ifc:nth-child(odd) div::before {
                                         border-color: transparent #018580 transparent transparent;
                                     }
                                 </style>
@@ -368,8 +384,11 @@
                                     <div>
                                         <p align="left">
                                             <time><b>Registrasi dan Pengiriman Karya WDC & IPC</b>
-                                        <p align="left" style="font-size: 16px">6 September – 25 Oktober 2017</p></time></p>
-                                        <p align="left">Pendaftaran WDC dan IPC dapat dilakukan secara online maupun offline, sedangkan untuk pengiriman karya WDC dan IPC hanya bisa dilakukan secara online.</p>
+                                        <p align="left" style="font-size: 16px">6 September – 25 Oktober
+                                            2017</p></time></p>
+                                        <p align="left">Pendaftaran WDC dan IPC dapat dilakukan secara online maupun
+                                            offline, sedangkan untuk pengiriman karya WDC dan IPC hanya bisa dilakukan
+                                            secara online.</p>
                                     </div>
                                 </li>
                                 <li id="bg_ifc">
@@ -388,7 +407,8 @@
                                         <p align="left" style="font-size: 16px">01 Oktober - 31 Oktober
                                             2017</p></time></p>
                                         <p align="left">Pengumpulan project ITFest dapat dilakukan secara online dengan
-                                            upload project langsung melalui website ini dan YouTube (bila ada video).</p>
+                                            upload project langsung melalui website ini dan YouTube (bila ada
+                                            video).</p>
                                     </div>
                                 </li>
                                 <li id="bg_ic">
@@ -432,8 +452,10 @@
                                     <div>
                                         <p align="left">
                                             <time><b>Penilaian WDC & IPC (Juri + Jumlah Like Instagram)</b>
-                                        <p align="left" style="font-size: 16px">30 Oktober - 09 November 2017</p></time></p>
-                                        <p align="left">Penilaian dilakukan oleh juri untuk menentukan juara umum, dan penilaian dengan like instagram untuk menentukan juara favorit.</p>
+                                        <p align="left" style="font-size: 16px">30 Oktober - 09 November
+                                            2017</p></time></p>
+                                        <p align="left">Penilaian dilakukan oleh juri untuk menentukan juara umum, dan
+                                            penilaian dengan like instagram untuk menentukan juara favorit.</p>
                                     </div>
                                 </li>
                                 <li id="bg_ic">
@@ -554,10 +576,10 @@
                                 <span>Contact Us</span></h2>
                             <hr class="lines wow zoomIn" data-wow-delay="0.3s">
                             <p style="color: black; font-weight: bold">Tap me!<br>
-                            <a href="http://line.me/ti/p/~agngga"><img src="/img/LINE_icon01.png" width="40"
+                                <a href="http://line.me/ti/p/~agngga"><img src="/img/LINE_icon01.png" width="40"
                                                                            height="40"></a>
-                            <a href="whatsapp://send?text=Hello, Angga!&phone=+6289677124206&abid=+6289677124206"><img
-                                        src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
+                                <a href="whatsapp://send?text=Hello, Angga!&phone=+6289677124206&abid=+6289677124206"><img
+                                            src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
                         </div>
                         <form id="contactForm">
                             <div class="row">

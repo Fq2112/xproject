@@ -331,7 +331,7 @@
                             <div class="label" style="color: black">Review</div>
                             <div class="label" style="color: black">Pembayaran</div>
                             <div class="label" style="color: black">Proses</div>
-                            <div class="label" style="color: black">E-Ticket</div>
+                            <div class="label" style="color: black">Hak Akses</div>
                         </div>
                     </div>
                 </div>
@@ -461,7 +461,7 @@
                             <label class="control-label col-md-3" for="tempat_lahir">Tempat Lahir</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="contoh: surabaya"
-                                       name="tempat_lahir" value="tempat_lahir" required>
+                                       name="tempat_lahir" required>
                                 <span class="glyphicon glyphicon-bed form-control-feedback"></span>
                                 @if ($errors->has('tempat_lahir'))
                                     <span class="help-block">
@@ -511,7 +511,7 @@
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }} has-feedback">
                             <label class="control-label col-md-3" for="alamat">Nomor Handphone</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" value="phone" name="phone"
+                                <input type="text" class="form-control" name="phone"
                                        placeholder="Masukkan Nomor Handphone"
                                        onkeypress="return hanyaAngka(event, false)" maxlength="13" required autofocus>
                                 <span class="glyphicon glyphicon-phone form-control-feedback"></span>

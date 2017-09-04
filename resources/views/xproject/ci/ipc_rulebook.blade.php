@@ -20,8 +20,11 @@
                             Photography Competition</h1>
                         <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"><em>"Human
                                 InTerest"</em></p>
-                        <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms"
-                           data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @if(Auth::guest())
+                            <a href="{{url('register#form')}}" class="btn btn-common wow fadeInUp"
+                               data-wow-duration="1000ms"
+                               data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @endif
                     </div>
                 </div>
             </div>

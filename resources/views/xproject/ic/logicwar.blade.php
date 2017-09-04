@@ -19,8 +19,11 @@
                         <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Logic War</h1>
                         <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"><em>"Explore Your
                                 Knowledge with Logic Art"</em></p>
-                        <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms"
-                           data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @if(Auth::guest())
+                            <a href="{{url('register#form')}}" class="btn btn-common wow fadeInUp"
+                               data-wow-duration="1000ms"
+                               data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -122,15 +125,17 @@
                                 padding-bottom: 0px;
                             }
                         </style>
-                        <div class="box-item right">
-                            <div class="text">
-                                <p>
-                                    <a href="#" class="btn btn-common3" id="submit">
-                                        daftar sekarang
-                                    </a>
-                                </p>
+                        @if(Auth::guest())
+                            <div class="box-item right">
+                                <div class="text">
+                                    <p>
+                                        <a href="{{url('register#form')}}" class="btn btn-common3" id="submit">
+                                            daftar sekarang
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="box-item right">
                             <div class="text">
                                 <p>
@@ -151,6 +156,34 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="box-item right">
+                            <div class="text">
+                                <div class="col-xs-12 alert alert-danger">
+                                    <table>
+                                        <tr>
+                                            <td><i class="fa fa-warning"></i></td>
+                                            <td>&nbsp;</td>
+                                            <td>Harap memasang Adobe Flash Player sebelum mengerjakan soal, untuk
+                                                mengunduh Adobe Flash Player silahkan klik <a target="_blank"
+                                                                                              href="https://get.adobe.com/flashplayer/"><strong>DISINI</strong></a>.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        {{--@if(Auth::user()->lomba()->first()->kode == 'logicwar')
+                            <div class="box-item right">
+                                <div class="text">
+                                    <p>
+                                        <a id="submit" target="_blank" class="btn btn-common3"
+                                           href="{{url('ic/xproject/logicwar-quiz')}}">
+                                            Logic War Quiz
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        @endif--}}
                     </div>
                 </div>
             </div>

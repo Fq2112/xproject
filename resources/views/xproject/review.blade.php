@@ -362,7 +362,7 @@
                     </style>
                     <br>
                     <div class="w3-container col-md-12">
-                        <div class="col-md-12">
+                        <div class="col-md-8">
                             <h2><i class="fa fa-user"></i> Identitas Diri</h2>
                             <div class="w3-panel w3-card"><br>
                                 <table>
@@ -384,12 +384,65 @@
                                     <tr>
                                         <td><br>No. Telp/HP</td>
                                         <td><br>&nbsp;:&nbsp;&nbsp;</td>
-                                        <td><br><strong>{{ Session::get('no_telp') }}</strong></td>
+                                        <td><br><strong>{{ Session::get('phone') }}</strong></td>
                                     </tr>
                                 </table>
                                 <br>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <h2><i class="fa fa-usd"></i> Rincian Harga</h2>
+                            <div class="w3-panel w3-card-4"><br>
+                                <?php
+                                if (Session::get('kategoriitf') == 'pes') {
+                                    $harga = 30000;
+                                } elseif (Session::get('lomba') == 'ifc') {
+                                    $harga = 300000;
+                                } elseif (Session::get('lomba') == 'logicwar' || Session::get('lomba') == 'wdc') {
+                                    $harga = 50000;
+                                } elseif (Session::get('lomba') == 'ipc') {
+                                    $harga = 35000;
+                                } else {
+                                    $harga = 120000;
+                                }
+                                $rptotal = number_format($harga, 2, ",", ".");
+                                ?>
+                                <table>
+                                    <tr>
+                                        <td>Harga Pendaftaran</td>
+                                        <td>&nbsp;:&nbsp;&nbsp;</td>
+                                        <td align="right"><strong>Rp{{$rptotal}}</strong>&nbsp;&nbsp;&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jumlah Peserta</td>
+                                        <td>&nbsp;:&nbsp;&nbsp;</td>
+                                        <td align="right">
+                                            @if(Session::get('kategoriitf')=='pes')
+                                                <strong>1 Orang</strong>&nbsp;&nbsp;&nbsp;
+                                            @elseif(Session::get('lomba')!='ifc')
+                                                <strong>1 Orang</strong>&nbsp;&nbsp;&nbsp;
+                                            @else
+                                                <strong>1 Team</strong>&nbsp;&nbsp;&nbsp;
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td align="right">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&nbsp;<strong>&times;</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><h5><strong>Harga yang Harus Dibayar</strong></h5></td>
+                                        <td><h4><strong>&nbsp;:&nbsp;&nbsp;</strong></h4></td>
+                                        <td align="right"><h4><strong>Rp{{$rptotal}}</strong>&nbsp;&nbsp;&nbsp;</h4>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                            </div>
+                        </div>
+
                         <div class="col-md-8">
                             <br>
                             <h2><i class="fa fa-tags"></i> Detail Lomba yang Diikuti</h2>
@@ -401,13 +454,16 @@
                                             <tr>
                                                 <td><br>Bidang Lomba</td>
                                                 <td><br>&nbsp;:&nbsp;&nbsp;</td>
-                                                <td><br><strong>{{ Session::get('lomba') }}</strong></td>
+                                                <td><br><strong
+                                                            style="text-transform: uppercase">{{ Session::get('lomba') }}</strong>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td><br>Bidang Kategori yang Diikuti</td>
                                                 <td><br>&nbsp;:&nbsp;&nbsp;</td>
                                                 <td>
-                                                    <br><strong>{{ Session::get('lomba') == 'itfest' ? Session::get('kategori') : '-' }}</strong>
+                                                    <br><strong
+                                                            style="text-transform: uppercase">{{ Session::get('lomba') == 'itfest' ? Session::get('kategoriitf') : '-' }}</strong>
                                                 </td>
                                             </tr>
                                         </table>

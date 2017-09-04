@@ -364,9 +364,23 @@
                     <div class="w3-container -align-center center-block">
                         <div class="col-md-12">
                             <h2><i class="fa fa-bank"></i> Selesaikan Pembayaran</h2>
-                            <div class="w3-panel w3-card">
+                            <div class="w3-panel w3-card text-center">
                                 <br>
-                                <h4 style="color: #0C4487" id="demo"></h4> <h4>Transfer ke Rekening berikut:</h4>
+                                <h4 style="color: #0C4487" id="demo"></h4> <h4>{{Session::get('kategoriitf')}} Mohon
+                                    transfer
+                                    <strong>
+                                        @if(Auth::user()->lomba()->first()->kode == 'ifc')
+                                            Rp300.000,00
+                                        @elseif(Auth::user()->lomba()->first()->kode == 'logicwar' || Auth::user()->lomba()->first()->kode == 'wdc')
+                                            Rp50.000,00
+                                        @elseif(Auth::user()->lomba()->first()->kode == 'ipc')
+                                            Rp35.000,00
+                                        @elseif(Auth::user()->lomba()->first()->kode == 'pes')
+                                            Rp30.000,00
+                                        @else
+                                            Rp120.000,00
+                                        @endif
+                                    </strong> ke rekening berikut:</h4>
                                 <br>
                                 <img src="/img/btn.png" style="width: 25%">
                                 <p>No. rek: <strong>00061-01-61-002020-2</strong><br>a/n. <strong>Nur Lujeng
@@ -375,34 +389,59 @@
                                 <p>Setelah anda melakukan pembayaran, mohon upload bukti pembayaran ke kontak
                                     berikut:</p>
                                 <p style="color: black; font-weight: bold">Tap me!<br>
-                                    @if(Auth::user()->lomba()->first()->pivot->kode == 'ifc')
-                                        <a href="http://line.me/ti/p/~agngga"><img src="/img/LINE_icon01.png" width="40"
-                                                                                   height="40"></a>
-                                        <a href="whatsapp://send?text=Ini kak bukti pembayarannya.&phone=+6289677124206&abid=+6289677124206"><img
-                                                    src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
+                                    @if(Auth::user()->lomba()->first()->kode == 'ifc')
+                                        <a href="http://line.me/ti/p/~fitrotindwi"><img src="/img/LINE_icon01.png"
+                                                                                        width="40"
+                                                                                        height="40"></a>
+                                        <a href="whatsapp://send?text=Hello, Fitro!&phone=+6289675014272&abid=+6289675014272"><img
+                                                    src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a>
+                                </p>
                                 <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s"
                                    style="color: black;font-weight: bold;font-size: 24px">
-                                    <b>Angga</b>: agngga | 089677124206<br>
+                                    <b>Fitrotin</b>: fitrotindwi | 089675014272<br>
+                                    <b>Adib</b>: Hafiizh04 | 087757232330
                                 </p>
-                                @elseif(Auth::user()->lomba()->first()->pivot->kode == 'logicwar')
+                                @elseif(Auth::user()->lomba()->first()->kode == 'logicwar')
+                                    <a href="http://line.me/ti/p/~nlkin"><img src="/img/LINE_icon01.png" width="40"
+                                                                              height="40"></a>
+                                    <a href="whatsapp://send?text=Hello, Kinanti!&phone=+6289677206608&abid=+6289677206608"><img
+                                                src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
+                                    <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms"
+                                       data-wow-delay="0.3s"
+                                       style="color: black;font-weight: bold;font-size: 24px">
+                                        <b>Kinanti</b>: nlkin | 089677206608<br>
+                                        <b>Kikin</b>: chairus_sakinah | 085231326541
+                                    </p>
 
-                                    Ini cp logic war
-
-                                    @elseif(Auth::user()->lomba()->first()->pivot->kode == 'wdc' || Auth::user()->lomba()->first()->pivot->kode == 'ipc')
-
-                                    cp wdc atau ipc
-
-                                    @else
-
-                                    cp untuk ITFest
-
+                                @elseif(Auth::user()->lomba()->first()->kode == 'wdc' ||
+                                        Auth::user()->lomba()->first()->kode == 'ipc')
+                                    <a href="http://line.me/ti/p/~mbohwes908"><img src="/img/LINE_icon01.png" width="40"
+                                                                                   height="40"></a>
+                                    <a href="whatsapp://send?text=Hello, Zahid!&phone=+6281343220357&abid=+6281343220357"><img
+                                                src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
+                                    <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms"
+                                       data-wow-delay="0.3s" style="color: black;font-weight: bold;font-size: 24px">
+                                        <b>Zahid</b>: mbohwes908 | 081343220357<br>
+                                        <b>Medina</b>: medinaamirinnisa | 085931381693
+                                    </p>
+                                @else
+                                    <a href="http://line.me/ti/p/~fiqqizanuarprakoso"><img src="/img/LINE_icon01.png"
+                                                                                           width="40"
+                                                                                           height="40"></a>
+                                    <a href="whatsapp://send?text=Hello, Fiqqi!&phone=+6285784542948&abid=+6285784542948"><img
+                                                src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
+                                    <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms"
+                                       data-wow-delay="0.3s" style="color: black;font-weight: bold;font-size: 24px">
+                                        <b>Fiqqi</b>: fiqqizanuarprakoso | 085784542948<br>
+                                        <b>Rahma</b>: rmsivana | 085216957677
+                                    </p>
                                 @endif
                                 <hr>
                                 <p>Setelah itu, silahkan klik tombol dibawah ini.</p>
                                 <a href="{{ route('form.proses') }}"
-                                   title="Dengan mengklik tombol ini maka anda akan mendapatkan nomor booking."
+                                   title="Pastikan anda telah mengunggah bukti pembayaran ke panitia."
                                    data-toggle="tooltip" data-placement="bottom" type="submit"
-                                   class="btn btn-common2"><strong>KONFIRMASI PEMBAYARAN <i
+                                   class="btn btn-common2"><strong>SAYA SUDAH MEMBAYAR <i
                                                 class="fa fa-chevron-right"></i></strong></a>
                                 <script>
                                     $(document).ready(function () {

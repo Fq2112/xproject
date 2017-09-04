@@ -18,8 +18,11 @@
                     <div class="contents text-center">
                         <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">ITFest</h1>
                         <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"><em>"Explore Your Creativity in Technology Era"</em></p>
-                        <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms"
-                           data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @if(Auth::guest())
+                            <a href="{{url('register#form')}}" class="btn btn-common wow fadeInUp"
+                               data-wow-duration="1000ms"
+                               data-wow-delay="400ms">DAFTAR SEKARANG!</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -134,15 +137,17 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="box-item right">
-                            <div class="text">
-                                <p>
-                                    <a href="#" class="btn btn-common3" id="submit">
-                                        daftar sekarang
-                                    </a>
-                                </p>
+                        @if(Auth::guest())
+                            <div class="box-item right">
+                                <div class="text">
+                                    <p>
+                                        <a href="{{url('register#form')}}" class="btn btn-common3" id="submit">
+                                            daftar sekarang
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="box-item right">
                             <div class="text">
                                 <p>
