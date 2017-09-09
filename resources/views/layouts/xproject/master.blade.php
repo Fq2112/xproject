@@ -54,12 +54,12 @@
                     }
                 </style>
                 <li class="nav-item">
-                    <a class="nav-link menu_head" href="#events">IC</a>
+                    <a class="nav-link menu_head" href="#">IC</a>
                     <div class="menu_body">
                         <a href="{{url('ic/xproject/logicwar')}}">Logic War</a>
                         <a href="{{url('ic/xproject/itfest')}}">ITFest</a>
                     </div>
-                    <a class="nav-link menu_head1" href="#events">CI</a>
+                    <a class="nav-link menu_head1" href="#">CI</a>
                     <div class="menu_body">
                         <a href="{{url('ci/xproject/wdc')}}">WDC</a>
                         <a href="{{url('ci/xproject/ipc')}}">IPC</a>

@@ -11,7 +11,7 @@
         <div class="fixed-top">
             <div class="container">
                 <div class="logo-menu">
-                    <a href="/xproject" class="logo"><img src="/img/xproject2.PNG" width="15%"></a>
+                    <a href="/xproject" class="logo"><img src="{{asset('img/xproject2.PNG')}}" width="15%"></a>
                     <button class="menu-button" id="open-button"><i class="lnr lnr-menu"></i></button>
                 </div>
             </div>

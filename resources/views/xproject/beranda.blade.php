@@ -6,7 +6,7 @@
         <div class="fixed-top">
             <div class="container">
                 <div class="logo-menu">
-                    <a href="/xproject" class="logo"><img src="/img/xproject2.PNG" width="15%"></a>
+                    <a href="/xproject" class="logo"><img id="xpro" src="/img/xproject2.PNG" style="width: 15%"></a>
                     <button class="menu-button" id="open-button"><i class="lnr lnr-menu"></i></button>
                 </div>
             </div>
@@ -368,7 +368,11 @@
                                             <time><b>Registrasi Logic War</b>
                                         <p align="left" style="font-size: 16px">01 September - 19 Oktober
                                             2017</p></time></p>
-                                        <p align="left">Pendaftaran Logic War secara online maupun offline.</p>
+                                        <p align="left">Pendaftaran Logic War secara online maupun offline.
+                                        <hr>
+                                        <a href="#" class="btn btn-common2" data-toggle="modal" data-target="#myModal1">Panduan
+                                            Pendaftaran</a></p>
+
                                     </div>
                                 </li>
                                 <li id="bg_ic">
@@ -565,7 +569,13 @@
         </div>
     </div>
     <!-- End Pricing Table Section -->
-
+    <script>
+        @if(session('contact'))
+            window.alert('{{session('contact')}}')
+        @elseif(session('subscribe'))
+            window.alert('{{session('subscribe')}}')
+        @endif
+    </script>
     <section id="contact" class="section">
         <div class="container">
             <div class="row justify-content-md-center">
@@ -581,63 +591,88 @@
                                 <a href="whatsapp://send?text=Hello, Angga!&phone=+6289677124206&abid=+6289677124206"><img
                                             src="/img/Whatsapp-ios-7-icon.png" width="40" height="40"></a></p>
                         </div>
-                        <form id="contactForm">
+                        <form role="form" method="post" action="{{ route('contact.submit') }}">
+                            {{ csrf_field() }}
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name"
-                                               placeholder="Your Name" required data-error="Please enter your name">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Email" id="email" class="form-control"
-                                               name="name" required data-error="Please enter your email">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Subject" id="msg_subject" class="form-control"
-                                               required data-error="Please enter your subject">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message" rows="11"
-                                              data-error="Write your message" required></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                    <div class="submit-button text-center">
-                                        <style>
-                                            .btn-common2 {
-                                                color: #ffffff;
-                                                border: 2px solid #000000;
-                                                background-color: #000000;
-                                                position: relative;
-                                                z-index: 1;
-                                                border-radius: 4px;
-                                                font-weight: bold;
-                                            }
 
-                                            .btn-common2:hover {
-                                                color: #000000;
-                                                font-weight: bold;
-                                                background-color: transparent;
-                                                border: 2px solid #000000;
-                                                transition: all 0.5s ease-in-out;
-                                                -moz-transition: all 0.5s ease-in-out;
-                                                -webkit-transition: all 0.5s ease-in-out;
-                                            }
-                                        </style>
-                                        <button class="btn btn-common2" id="submit" type="submit">Send Message</button>
-                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                        <div class="clearfix"></div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        @if(Auth::check())
+                                            <input value="{{ Auth::user()->nama}}" type="text" class="form-control"
+                                                   id="name" name="nama" placeholder="Your Name" required
+                                                   data-error="Please enter your name" style="color: #999999">
+                                        @else
+                                            <input type="text" class="form-control" id="name" name="nama"
+                                                   placeholder="Your Name" required data-error="Please enter your name"
+                                                   style="color: #999999">
+                                        @endif
+                                        <div class="help-block with-errors"></div>
+
                                     </div>
+
                                 </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        @if(Auth::check())
+                                            <input value="{{ Auth::user()->email}}" type="text" placeholder="Your Email"
+                                                   id="email" class="form-control" name="email" required
+                                                   data-error="Please enter your email" style="color: #999999">
+                                        @else
+                                            <input type="text" placeholder="Your Email" id="email" class="form-control"
+                                                   name="email" required data-error="Please enter your email"
+                                                   style="color: #999999">
+                                        @endif
+                                        <div class="help-block with-errors"></div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+
+                                        <input name="subject" type="text" placeholder="Subject" id="msg_subject"
+                                               class="form-control"
+
+                                               required data-error="Please enter your subject" style="color: #999999">
+
+                                        <div class="help-block with-errors"></div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+
+                                    <textarea name="message" class="form-control" placeholder="Your Message" rows="11"
+
+                                              data-error="Write your message" required
+                                              style="color: #999999"></textarea>
+
+                                        <div class="help-block with-errors"></div>
+
+                                    </div>
+
+                                    <div class="submit-button text-center">
+
+                                        <button class="btn btn-common2" type="submit">Send Message</button>
+
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+
+                                        <div class="clearfix"></div>
+
+                                    </div>
+
+                                </div>
+
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -659,8 +694,15 @@
             </div>
             <div class="row justify-content-md-center">
                 <div class="col-md-8">
-                    <form class="text-center form-inline wow fadeInUp" data-wow-delay="0.3s">
-                        <input class="mb-20 form-control" name="email" placeholder="Your Email Address">
+                    <form action="{{route('subscribe.submit')}}" class="text-center form-inline wow fadeInUp"
+                          data-wow-delay="0.3s" role="form" method="post">
+                        {{csrf_field()}}
+                        @if(Auth::check())
+                            <input value="{{Auth::user()->email}}" class="mb-20 form-control" name="email"
+                                   placeholder="Your Email Address">
+                        @else
+                            <input class="mb-20 form-control" name="email" placeholder="Your Email Address">
+                        @endif
                         <button class="sub_btn">subscribe</button>
                     </form>
                 </div>
@@ -669,9 +711,9 @@
     </div>
     <!-- Subcribe Section End -->
 @endsection
-<div id="loader">
+{{--<div id="loader">
     <div class="spinner">
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
     </div>
-</div>
+</div>--}}

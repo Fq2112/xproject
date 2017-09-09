@@ -25,6 +25,10 @@
   .subscribe-box input[type="text"] {
     padding: 6px 10px;
   }
+
+    #xpro {
+        width: 100%;
+    }
 }
 @media (max-width: 640px) {
   .section-header .section-title {
@@ -61,6 +65,10 @@
   .counters .facts-item {
     margin-bottom: 30px;
   }
+
+    #xpro {
+        width: 100%;
+    }
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .bg-faded {
@@ -103,4 +111,8 @@
     height: 36px;
     line-height: 36px;
   }
+
+    #xpro {
+        width: 100%;
+    }
 }

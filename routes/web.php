@@ -55,6 +55,9 @@ Route::namespace('Auth')->group(function () {
 Route::prefix('xproject')->group(function () {
 
     Route::get('/', 'XprojectController@index');
+    Route::post('/contact', 'MailController@postContact')->name('contact.submit');
+    Route::post('/subscribe', 'MailController@postSubscribe')->name('subscribe.submit');
+
 
     Route::middleware('guest')->group(function () {
 
